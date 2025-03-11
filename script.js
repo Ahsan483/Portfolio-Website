@@ -1,103 +1,210 @@
-// GSAP Animations
-gsap.to(".wave", { duration: 6, x: -200, repeat: -1, yoyo: true });
-gsap.to(".wave2", { duration: 6, x: -200, repeat: -1, yoyo: true, delay: -3 });
-gsap.from(".profile-pic", { duration: 1.5, scale: 0, ease: "elastic.out(1, 0.5)", delay: 0.5 });
-gsap.from(".hero h1, .hero .tagline", { duration: 1, y: 100, opacity: 0, stagger: 0.2, delay: 1 });
-gsap.from(".cta-btn", { duration: 1, scale: 0, ease: "back.out(1.7)", delay: 1.5 });
+// Hero Animations
+gsap.from(".hero h1", { duration: 1.5, y: 100, opacity: 0, ease: "power4.out", delay: 1 });
+gsap.from(".hero .tagline", { duration: 1.5, y: 50, opacity: 0, ease: "power4.out", delay: 1.2 });
+gsap.from(".cta-btn", { duration: 1, scale: 0, ease: "back.out(2)", delay: 1.5 });
 
+// Section Animations
 document.querySelectorAll("section").forEach((section, i) => {
   gsap.from(section, {
-    duration: 1,
+    duration: 1.2,
     y: 150,
     opacity: 0,
-    delay: 2 + i * 0.4,
+    ease: "power3.out",
+    delay: i * 0.3,
     scrollTrigger: { trigger: section, start: "top 85%" }
   });
 });
 
-// LinkedIn Video Posts (Manually collected from your profile as of March 9, 2025)
-const linkedinVideos = [
-  {
-    title: "Pixel2D Adventure: Unreal Engine Minigame",
-    desc: "A Level 5 Unreal Engine minigame with a menu, animated player, obstacles, keys, and portals, built in just 3 hours despite no prior Unreal experience, showcasing rapid learning and adaptability",
-    url: "https://www.linkedin.com/posts/ahsan-mehmood-400317192_gamedevelopment-fiverr-unrealengine-activity-7288601452464263168-QWEy"
-  },
-
-  {
-    title: "Dynamic Product Showcase: Interactive Unity3D Simulation",
-    desc: "An interactive Unity3D simulation showcasing dynamic product placement with drag-and-drop, customizable colors, proximity-based lighting, and expandable models, built using C# for real-time engagement",
-    url: "https://www.linkedin.com/posts/ahsan-mehmood-400317192_unity3d-csharp-3dmodeling-activity-7255893709748092929-vqZs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC1AxoABBINrydpJ5XTUnvoKvmwLs2SnhNs"
-  },
-  
-  {
-    title: "AI-Powered Interactive Storytelling in Unity3D",
-    desc: "A Unity3D demo featuring an AI-driven girl character with eye tracking, head and body movements, hand gestures, and text-to-speech narration for an engaging, interactive zoo storytelling experience.",
-    url: "https://www.linkedin.com/posts/ahsan-mehmood-400317192_unity3d-ai-demoproject-activity-7245025022619078656-EEec?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC1AxoABBINrydpJ5XTUnvoKvmwLs2SnhNs"
-  },
-  {
-    title: "CyberGuard: ML-Powered Threat Detection",
-    desc: "A C++ and Python project integrating OMNeT++ simulation with machine learning to detect and block cyber threats, featuring IDS and IDMEF for secure message routing and encryption",
-    url: "https://www.linkedin.com/posts/ahsan-mehmood-400317192_cybersecurity-machinelearning-omnet-activity-7214746521672531968-ELmI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC1AxoABBINrydpJ5XTUnvoKvmwLs2SnhNs"
-  },
-
-];
-
-// Populate LinkedIn Videos
-const projectsGrid = document.querySelector(".projects-grid");
-linkedinVideos.forEach(video => {
-  const card = document.createElement("div");
-  card.className = "project-card";
-  card.innerHTML = `
-    <h3>${video.title}</h3>
-    <p>${video.desc}</p>
-    <a href="${video.url}" target="_blank">Watch on LinkedIn</a>
-    <!-- If you have a direct video URL (e.g., YouTube or hosted MP4), uncomment below and add the source -->
-    <!-- <video controls src="YOUR_DIRECT_VIDEO_URL"></video> -->
-    
-  `;
-  projectsGrid.appendChild(card);
-  gsap.from(card, { duration: 0.7, x: -100, opacity: 0, delay: Math.random() * 0.5 });
+// About Animation
+gsap.from(".about-text", {
+  duration: 1.5,
+  x: -300,
+  opacity: 0,
+  ease: "power2.out",
+  scrollTrigger: { trigger: "#about", start: "top 80%" }
 });
 
-// Placeholder GitHub Repos (Add your GitHub repositories here)
-const githubRepos = [
-  // Add your GitHub repos here, e.g.:
-  // { name: "Repo 1", desc: "Description", url: "https://github.com/Ahsan483/repo1" },
-  // Repeat for all your repos
-];
-
-const githubReposContainer = document.querySelector(".github-repos");
-githubRepos.forEach(repo => {
-  const card = document.createElement("div");
-  card.className = "repo-card";
-  card.innerHTML = `
-    <h3>${repo.name}</h3>
-    <p>${repo.desc}</p>
-    <a href="${repo.url}" target="_blank">View on GitHub</a>
-  `;
-  githubReposContainer.appendChild(card);
-  gsap.from(card, { duration: 0.7, x: 100, opacity: 0, delay: Math.random() * 0.5 });
+// Skills Data and Animation
+const skills = ["Python", "C++", "Game Development", "Unity3D", "AI/ML", "Django", "Web Development", "Cybersecurity", "Tkinter", "OpenGL"];
+const skillsContainer = document.querySelector(".skills-container");
+skills.forEach((skill, index) => {
+  const skillCard = document.createElement("div");
+  skillCard.className = "skill-card";
+  skillCard.textContent = skill;
+  skillsContainer.appendChild(skillCard);
+  gsap.from(skillCard, {
+    duration: 0.8,
+    scale: 0,
+    rotation: 360,
+    ease: "back.out(2)",
+    delay: index * 0.1,
+    scrollTrigger: { trigger: "#skills", start: "top 80%" }
+  });
 });
 
-// Placeholder GitHub Commits (Add your GitHub commits here)
-const githubCommits = [
-  // Add your GitHub commits here, e.g.:
-  // { message: "Commit message", date: "2023-10-01" },
-  // Repeat for all your commits
-];
+// Fetch GitHub Repositories
+fetch("https://api.github.com/users/Ahsan483/repos")
+  .then(response => response.json())
+  .then(repos => {
+    const projectsGrid = document.querySelector(".projects-grid");
+    repos.slice(0, 6).forEach((repo, index) => { 
+      const timelineItem = document.createElement("div");
+      timelineItem.className = "timeline-item";
+      timelineItem.innerHTML = `
+        <div class="timeline-content">
+          <h3>${repo.name.replace(/-/g, " ")}</h3>
+          <p>${repo.description || "No description available"}</p>
+          <p class="no-video">Visit repo for details</p>
+          <a href="${repo.html_url}" target="_blank" class="github-btn">View on GitHub</a>
+        </div>
+      `;
+      projectsGrid.appendChild(timelineItem);
 
-const githubCommitsContainer = document.querySelector(".github-commits");
-githubCommits.forEach(commit => {
-  const card = document.createElement("div");
-  card.className = "commit-card";
-  card.innerHTML = `
-    <p>${commit.message}</p>
-    <small>${commit.date}</small>
-  `;
-  githubCommitsContainer.appendChild(card);
-  gsap.from(card, { duration: 0.7, y: 50, opacity: 0, delay: Math.random() * 0.5 });
+      gsap.from(timelineItem, {
+        duration: 1.2,
+        x: 200,
+        opacity: 0,
+        ease: "power3.out",
+        delay: index * 0.15,
+        scrollTrigger: { trigger: "#projects", start: "top 80%" }
+      });
+    });
+
+    // GitHub Stats
+    document.getElementById("repos-count").textContent = repos.length;
+    document.getElementById("stars-count").textContent = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+  });
+
+// Fetch GitHub Commits (Simplified - requires authentication for full data)
+fetch("https://api.github.com/users/Ahsan483/events")
+  .then(response => response.json())
+  .then(events => {
+    const commits = events.filter(event => event.type === "PushEvent").slice(0, 5); // Last 5 commits
+    const githubCommitsContainer = document.querySelector(".github-commits");
+    commits.forEach((commit, index) => {
+      const commitCard = document.createElement("div");
+      commitCard.className = "commit-card";
+      commitCard.innerHTML = `
+        <p>${commit.payload.commits[0].message}</p>
+        <small>${new Date(commit.created_at).toLocaleDateString()}</small>
+      `;
+      githubCommitsContainer.appendChild(commitCard);
+      gsap.from(commitCard, {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.out",
+        delay: index * 0.2,
+        scrollTrigger: { trigger: "#github", start: "top 80%" }
+      });
+    });
+    document.getElementById("commits-count").textContent = commits.length; // Approx, full count needs API token
+  });
+
+// Contact Animation
+gsap.from("#contact-form, .social-links", {
+  duration: 1.5,
+  y: 100,
+  opacity: 0,
+  stagger: 0.3,
+  ease: "power2.out",
+  scrollTrigger: { trigger: "#contact", start: "top 80%" }
 });
 
-// Placeholder GitHub Stats (Update with your real data)
-document.getElementById("repos-count").textContent = githubRepos.length;
-document.getElementById("commits-count").textContent = github
+// GSAP Counter Animation Function
+function animateCounter(element, start, end, duration) {
+  gsap.fromTo(
+    element,
+    { innerText: start },
+    {
+      innerText: end,
+      duration: duration,
+      ease: "power1.out",
+      snap: { innerText: 1 },
+      onUpdate: function () {
+        element.innerText = Math.floor(element.innerText);
+      }
+    }
+  );
+}
+
+// Fetch GitHub Data and Populate Insights
+fetch("https://api.github.com/users/Ahsan483/repos")
+  .then(response => response.json())
+  .then(repos => {
+    const reposGrid = document.querySelector(".repos-grid");
+    const reposCount = document.getElementById("repos-count");
+    const starsCount = document.getElementById("stars-count");
+
+    // Repositories (Top 6)
+    repos.slice(0, 6).forEach((repo, index) => {
+      const repoCard = document.createElement("div");
+      repoCard.className = "repo-card";
+      repoCard.innerHTML = `
+        <h4>${repo.name.replace(/-/g, " ")}</h4>
+        <p>${repo.description || "No description available"}</p>
+        <div class="repo-stats">
+          <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+          <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+        </div>
+        <a href="${repo.html_url}" target="_blank" class="github-btn">View on GitHub</a>
+      `;
+      reposGrid.appendChild(repoCard);
+
+      gsap.from(repoCard, {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power3.out",
+        delay: index * 0.1,
+        scrollTrigger: { trigger: ".github-repos", start: "top 80%" }
+      });
+    });
+
+    // Stats
+    const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+    animateCounter(reposCount, 0, repos.length, 2);
+    animateCounter(starsCount, 0, totalStars, 2);
+  })
+  .catch(error => console.error("Error fetching repos:", error));
+
+// Fetch Commits
+fetch("https://api.github.com/users/Ahsan483/events")
+  .then(response => response.json())
+  .then(events => {
+    const commits = events.filter(event => event.type === "PushEvent").slice(0, 5); // Last 5 commits
+    const commitsTimeline = document.querySelector(".commits-timeline");
+    const commitsCount = document.getElementById("commits-count");
+
+    commits.forEach((commit, index) => {
+      const commitCard = document.createElement("div");
+      commitCard.className = "commit-card";
+      commitCard.innerHTML = `
+        <p>${commit.payload.commits[0].message}</p>
+        <small>${new Date(commit.created_at).toLocaleDateString()}</small>
+        <span class="commit-dot"></span>
+      `;
+      commitsTimeline.appendChild(commitCard);
+
+      gsap.from(commitCard, {
+        duration: 1.2,
+        x: -200,
+        opacity: 0,
+        ease: "power2.out",
+        delay: index * 0.2,
+        scrollTrigger: { trigger: ".github-commits", start: "top 80%" }
+      });
+    });
+
+    animateCounter(commitsCount, 0, commits.length, 2); // Approximate; full count needs token
+  })
+  .catch(error => console.error("Error fetching commits:", error));
+
+// Section Animation
+gsap.from("#github h2", {
+  duration: 1.5,
+  y: -50,
+  opacity: 0,
+  ease: "power3.out",
+  scrollTrigger: { trigger: "#github", start: "top 80%" }
+});

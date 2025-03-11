@@ -6,61 +6,22 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  color: #fff;
-  background: #0d0d1a; /* Dark cosmic background */
+  color: #e0e0e0;
+  background: #1a0b2e;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Animated Background */
 .background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, #1a1a3d, #0d0d1a);
+  background: linear-gradient(135deg, #1a0b2e, #2e1a47);
   z-index: -1;
-  overflow: hidden;
 }
 
-/* Cosmic particles effect */
-.background::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)"/></svg>') repeat;
-  animation: starrySky 50s linear infinite;
-}
-
-@keyframes starrySky {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-1000px); }
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(to top, rgba(102, 51, 255, 0.3), transparent);
-  animation: waveAnimation 6s infinite linear;
-}
-
-.wave2 {
-  background: linear-gradient(to top, rgba(51, 255, 204, 0.3), transparent);
-  animation-delay: -3s;
-}
-
-@keyframes waveAnimation {
-  0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-100px) translateY(20px); }
-  100% { transform: translateX(-200px) translateY(0); }
-}
-
-/* Navigation */
 nav {
   position: fixed;
   top: 0;
@@ -69,14 +30,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: rgba(13, 13, 26, 0.9);
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
 
 .logo {
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: 800;
-  color: #6633ff; /* Cosmic purple */
+  color: #00e6e6;
 }
 
 nav ul {
@@ -85,240 +47,428 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 20px;
+  margin: 0 25px;
 }
 
 nav ul li a {
   color: #e0e0e0;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav ul li a:hover {
-  color: #33ffcc; /* Cosmic teal */
+  color: #00e6e6;
+  text-shadow: 0 0 10px rgba(0, 230, 230, 0.7);
 }
 
-/* Hero Section */
 .hero {
   text-align: center;
   padding: 150px 20px 80px;
 }
 
-/* New Profile Picture Styling */
 .profile-pic {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  position: relative;
-  display: block; /* Ensure image is visible */
-  margin: 0 auto; /* Center it */
-  border: 5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 
-      0 0 20px rgba(102, 51, 255, 0.7), /* Cosmic purple glow */
-      0 0 40px rgba(51, 255, 204, 0.5); /* Cosmic teal glow */
-  animation: orbit 6s infinite ease-in-out;
-  transition: all 0.4s ease;
-  object-fit: cover; /* Ensure image fits perfectly */
+  display: block;
+  margin: 0 auto;
+  border: 6px solid #00e6e6;
+  box-shadow: 0 0 25px rgba(0, 230, 230, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Remove pseudo-elements and fix visibility */
 .profile-pic:hover {
-  transform: scale(1.15);
-  box-shadow: 
-      0 0 30px rgba(102, 51, 255, 0.9),
-      0 0 60px rgba(51, 255, 204, 0.7);
-}
-
-/* Cosmic ring effect */
-.profile-pic::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 340px;
-  height: 340px;
-  border: 2px dashed rgba(102, 51, 255, 0.5);
-  border-radius: 50%;
-  animation: spin 10s linear infinite;
-  z-index: -1;
-}
-
-/* Animations */
-@keyframes orbit {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(0, 230, 230, 0.8);
 }
 
 h1 {
-  font-size: 3.5em;
+  font-size: 4em;
   margin: 20px 0;
+  color: #e0e0e0;
 }
 
 h1 span {
-  color: #6633ff;
-  text-shadow: 0 0 20px rgba(102, 51, 255, 0.7);
+  color: #00e6e6;
 }
-
 
 .tagline {
-  font-size: 1.5em;
-  color: #e0e0e0;
-  margin: 0 auto 30px; /* Center horizontally and keep bottom margin */
-  width: 700px; /* Fixed width as requested */
-  text-align: center; /* Center the text inside the block */
-  line-height: 1.4; /* Improved readability */
-  font-weight: 500; /* Slight weight for elegance */
-  text-shadow: 
-      0 0 10px rgba(102, 51, 255, 0.5), /* Cosmic purple glow */
-      0 0 20px rgba(51, 255, 204, 0.3); /* Cosmic teal glow */
-  padding: 10px 20px; /* Comfortable padding */
-  background: rgba(13, 13, 26, 0.3); /* Subtle cosmic background */
-  border-radius: 15px; /* Rounded edges */
+  font-size: 1.6em;
+  color: #b0b0b0;
+  margin: 0 auto 30px;
+  width: 700px;
+  text-align: center;
+  line-height: 1.5;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Hover effect for extra flair */
 .tagline:hover {
-  color: #ffffff;
-  text-shadow: 
-      0 0 15px rgba(102, 51, 255, 0.8),
-      0 0 30px rgba(51, 255, 204, 0.5);
-  transform: scale(1.05); /* Slight zoom */
-  background: rgba(13, 13, 26, 0.5);
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.1);
 }
-
 
 .cta-btn {
   display: inline-block;
-  padding: 15px 30px;
-  background: linear-gradient(45deg, #6633ff, #33ffcc);
-  color: #fff;
+  padding: 15px 35px;
+  background: #00e6e6;
+  color: #1a0b2e;
   text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(102, 51, 255, 0.5);
-  transition: transform 0.3s;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .cta-btn:hover {
-  transform: scale(1.1);
+  background: #00b3b3;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 230, 230, 0.7);
 }
 
-/* Sections */
 section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 h2 {
-  font-size: 2.8em;
-  color: #33ffcc;
-  text-shadow: 0 0 15px rgba(51, 255, 204, 0.5);
-  margin-bottom: 40px;
+  font-size: 3em;
+  color: #00e6e6;
+  margin-bottom: 50px;
   text-align: center;
+  text-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
 }
 
-/* About */
-.about-content {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(51, 255, 204, 0.3);
-}
-
-.about-content p {
+/* About Section */
+.about-text {
   font-size: 1.3em;
-  line-height: 1.6;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 50px;
+/* Skills Section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
 }
 
-.project-card {
+.skill-card {
   background: rgba(255, 255, 255, 0.08);
-  padding: 5px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(102, 51, 255, 0.4);
-  transition: transform 0.3s;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #00e6e6;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
+.skill-card:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0, 230, 230, 0.6);
 }
 
-.project-card a {
-  color: #33ffcc;
+/* Projects Section */
+.projects-grid {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 0;
+  gap: 60px;
+  align-items: center;
+  height: 400px;
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+.projects-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: #00e6e6;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 230, 230, 0.7);
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: #00b3b3;
+}
+
+.projects-grid::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+.timeline-item {
+  position: relative;
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 220px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  transform: translateY(-100px);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  transform: translateY(100px);
+}
+
+.timeline-content:hover {
+  transform: scale(1.1) translateY(-100px);
+  box-shadow: 0 0 30px rgba(0, 230, 230, 0.6);
+}
+
+.timeline-item:nth-child(even) .timeline-content:hover {
+  transform: scale(1.1) translateY(100px);
+}
+
+.timeline-content h3 {
+  font-size: 1.3em;
+  color: #00e6e6;
+  margin: 0;
+}
+
+.timeline-content p {
+  font-size: 0.95em;
+  color: #e0e0e0;
+  margin: 0;
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.no-video {
+  color: #888;
+  font-style: italic;
+  margin: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2e1a47;
+  border-radius: 8px;
+  font-size: 0.85em;
+  width: 100%;
+}
+
+.github-btn {
+  padding: 8px 15px;
+  background: #00e6e6;
+  color: #1a0b2e;
+  border-radius: 5px;
   text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.project-card a:hover {
-  color: #6633ff;
+.github-btn:hover {
+  background: #00b3b3;
+  transform: translateY(-2px);
 }
 
-/* GitHub */
+/* GitHub Section */
+#github {
+  background: linear-gradient(135deg, rgba(42, 26, 71, 0.8), rgba(26, 11, 46, 0.8));
+  border-radius: 15px;
+  padding: 60px 20px;
+  margin: 0 auto;
+  box-shadow: 0 0 30px rgba(0, 230, 230, 0.2);
+}
+
 .github-stats {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 50px;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
 .stat-card {
-  background: rgba(51, 255, 204, 0.15);
-  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 35px;
   border-radius: 12px;
-  font-size: 1.3em;
-  box-shadow: 0 0 15px rgba(51, 255, 204, 0.5);
+  font-size: 1.5em;
+  color: #e0e0e0;
+  box-shadow: 0 0 20px rgba(0, 230, 230, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 230, 230, 0.5);
 }
 
 .stat-card i {
-  color: #33ffcc;
+  color: #00e6e6;
   margin-right: 10px;
 }
 
-.github-repos, .github-commits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+.github-repos h3,
+.github-commits h3 {
+  font-size: 1.8em;
+  color: #00e6e6;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-.repo-card, .commit-card {
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.repo-card {
   background: rgba(255, 255, 255, 0.08);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(102, 51, 255, 0.4);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.repo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 230, 230, 0.5);
+}
+
+.repo-card h4 {
+  font-size: 1.3em;
+  color: #00e6e6;
+  margin-bottom: 10px;
+}
+
+.repo-card p {
+  font-size: 0.95em;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.repo-stats {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 0.9em;
+  color: #b0b0b0;
+  margin-bottom: 15px;
+}
+
+.repo-stats i {
+  color: #00e6e6;
+  margin-right: 5px;
+}
+
+.commits-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.commits-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #00e6e6;
+  transform: translateX(-50%);
+}
+
+.commit-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 10px;
+  width: 45%;
+  margin: 20px 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
 }
 
-.repo-card:hover, .commit-card:hover {
-  transform: translateY(-10px);
+.commit-card:nth-child(odd) {
+  margin-left: 55%;
 }
 
-.repo-card a {
-  color: #6633ff;
-  text-decoration: none;
+.commit-card:nth-child(even) {
+  margin-right: 55%;
 }
 
-.repo-card a:hover {
-  color: #33ffcc;
+.commit-card:hover {
+  transform: scale(1.05);
 }
 
-/* Contact */
+.commit-card p {
+  font-size: 0.95em;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+.commit-card small {
+  font-size: 0.8em;
+  color: #b0b0b0;
+}
+
+.commit-dot {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: #00e6e6;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 230, 230, 0.7);
+}
+
+.commit-card:nth-child(odd) .commit-dot {
+  left: -26px;
+}
+
+.commit-card:nth-child(even) .commit-dot {
+  right: -26px;
+}
+
+/* Contact Section */
 #contact-form {
   max-width: 700px;
-  margin: 0 auto 30px;
+  margin: 0 auto 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -327,10 +477,16 @@ h2 {
 #contact-form input, #contact-form textarea {
   padding: 15px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #e0e0e0;
   font-size: 1.1em;
+  transition: box-shadow 0.3s;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+  box-shadow: 0 0 15px rgba(0, 230, 230, 0.5);
+  outline: none;
 }
 
 #contact-form textarea {
@@ -344,21 +500,38 @@ h2 {
 
 .social-links a {
   color: #e0e0e0;
-  font-size: 2em;
-  margin: 0 20px;
-  transition: transform 0.3s, color 0.3s;
+  font-size: 2.5em;
+  margin: 0 25px;
+  transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
 }
 
 .social-links a:hover {
-  transform: scale(1.2);
-  color: #6633ff;
+  transform: scale(1.3);
+  color: #00e6e6;
+  text-shadow: 0 0 15px rgba(0, 230, 230, 0.7);
 }
 
-/* Responsive */
+/* Responsive Design */
+@media (max-width: 900px) {
+  .timeline-item { flex: 0 0 220px; }
+  .timeline-content { max-width: 200px; }
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content { transform: translateY(0); }
+  .timeline-content:hover { transform: scale(1.05); }
+  .repos-grid { grid-template-columns: 1fr; }
+  .commit-card { width: 100%; margin: 20px auto; }
+  .commit-card:nth-child(odd), .commit-card:nth-child(even) { margin-left: 0; margin-right: 0; }
+  .commit-dot { display: none; }
+  .commits-timeline::before { left: 10px; }
+}
+
 @media (max-width: 600px) {
   h1 { font-size: 2.5em; }
   h2 { font-size: 2em; }
-  .profile-pic { width: 150px; height: 150px; }
+  .profile-pic { width: 180px; height: 180px; }
   nav { padding: 15px 20px; }
   nav ul li { margin: 0 10px; }
+  .timeline-item { flex: 0 0 180px; }
+  .no-video { height: 80px; }
+  .tagline { width: 100%; font-size: 1.2em; }
 }
