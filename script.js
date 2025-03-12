@@ -47,7 +47,7 @@ fetch("https://api.github.com/users/Ahsan483/repos")
   .then(response => response.json())
   .then(repos => {
     const projectsGrid = document.querySelector(".projects-grid");
-    repos.slice(0, 6).forEach((repo, index) => { 
+    repos.slice(0, 50).forEach((repo, index) => { 
       const timelineItem = document.createElement("div");
       timelineItem.className = "timeline-item";
       timelineItem.innerHTML = `
@@ -137,16 +137,12 @@ fetch("https://api.github.com/users/Ahsan483/repos")
     const starsCount = document.getElementById("stars-count");
 
     // Repositories (Top 6)
-    repos.slice(0, 6).forEach((repo, index) => {
+    repos.slice(0, 50).forEach((repo, index) => {
       const repoCard = document.createElement("div");
       repoCard.className = "repo-card";
       repoCard.innerHTML = `
         <h4>${repo.name.replace(/-/g, " ")}</h4>
         <p>${repo.description || "No description available"}</p>
-        <div class="repo-stats">
-          <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
-          <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
-        </div>
         <a href="${repo.html_url}" target="_blank" class="github-btn">View on GitHub</a>
       `;
       reposGrid.appendChild(repoCard);
@@ -172,7 +168,7 @@ fetch("https://api.github.com/users/Ahsan483/repos")
 fetch("https://api.github.com/users/Ahsan483/events")
   .then(response => response.json())
   .then(events => {
-    const commits = events.filter(event => event.type === "PushEvent").slice(0, 5); // Last 5 commits
+    const commits = events.filter(event => event.type === "PushEvent").slice(0, 100); // Last 100 commits
     const commitsTimeline = document.querySelector(".commits-timeline");
     const commitsCount = document.getElementById("commits-count");
 
@@ -192,7 +188,7 @@ fetch("https://api.github.com/users/Ahsan483/events")
         opacity: 0,
         ease: "power2.out",
         delay: index * 0.2,
-        scrollTrigger: { trigger: ".github-commits", start: "top 80%" }
+        scrollTrigger: { trigger: ".github-commits", start: "top 90%" }
       });
     });
 
