@@ -8,7 +8,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #e5e9f0; /* Bright yet soft off-white for readability */
-  background: #212630; /* Deep charcoal with blue hint */
+  background: #000000; /* Deep charcoal with blue hint */
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -20,7 +20,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, #212630 0%, #2a303c 50%, #333a4a 100%);
+  background: linear-gradient(145deg, #0b0c0c 0%, #15171a 50%, #131720 100%);
   z-index: -1;
   opacity: 0.9;
 }
@@ -34,7 +34,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: rgba(33, 38, 48, 0.95);
+  background: rgba(14, 13, 13, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -43,7 +43,7 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #b3c0d6;
+  color: #ffffff;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -58,7 +58,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #b3c0d6;
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -68,7 +68,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #88c0d0;
+  color: #00ce0a;
   transform: translateY(-1px);
 }
 
@@ -83,7 +83,7 @@ nav ul li a:hover {
   height: 240px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   margin: 0 auto;
-  border: 5px solid #88c0d0;
+  border: 5px solid #00ce0a;
   box-shadow: 0 0 25px rgba(136, 192, 208, 0.3);
   transform: rotate(4deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -103,7 +103,7 @@ h1 {
 }
 
 h1 span {
-  color: #88c0d0;
+  color: #00ce0a;
   text-shadow: 0 0 5px rgba(136, 192, 208, 0.2);
 }
 
@@ -128,7 +128,7 @@ h1 span {
 .cta-btn {
   display: inline-block;
   padding: 12px 30px;
-  background: #88c0d0;
+  background: #00ce0a;
   color: #212630;
   text-decoration: none;
   border-radius: 40px;
@@ -155,7 +155,7 @@ section {
 h2 {
   font-size: 2rem;
   font-weight: 600;
-  color: #88c0d0;
+  color: #00ce0a;
   margin-bottom: 50px;
   text-align: center;
   letter-spacing: -0.3px;
@@ -176,7 +176,7 @@ h2 {
   width: 300px;
   height: 300px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  border: 5px solid #88c0d0;
+  border: 5px solid #00ce0a;
   box-shadow: 0 0 25px rgba(136, 192, 208, 0.3);
   transform: rotate(4deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -195,7 +195,7 @@ h2 {
 .about-content h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #88c0d0;
+  color: #00ce0a;
   text-align: left;
   margin-bottom: 20px;
   transform: skew(-5deg);
@@ -210,7 +210,7 @@ h2 {
   left: 0;
   width: 50%;
   height: 3px;
-  background: #88c0d0;
+  background: #00ce0a;
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(136, 192, 208, 0.5);
 }
@@ -236,11 +236,11 @@ h2 {
 
 .skill-card {
   background: linear-gradient(135deg, rgba(42, 48, 60, 0.95), rgba(51, 58, 74, 0.95));
-  padding: 20px;
+  padding: 10px;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 500;
-  color: #88c0d0;
+  color: #00ce0a;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -259,7 +259,7 @@ h2 {
   padding: 25px 0;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #88c0d0 #2a303c;
+  scrollbar-color: #00ce0a #2a303c;
 }
 
 .projects-grid::-webkit-scrollbar {
@@ -272,7 +272,7 @@ h2 {
 }
 
 .projects-grid::-webkit-scrollbar-thumb {
-  background: #88c0d0;
+  background: #00ce0a;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(136, 192, 208, 0.4);
 }
@@ -302,7 +302,7 @@ h2 {
 .timeline-content h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #88c0d0;
+  color: #00ce0a;
   margin-bottom: 12px;
 }
 
@@ -330,7 +330,7 @@ h2 {
 
 .github-btn {
   padding: 10px 20px;
-  background: #88c0d0;
+  background: #00ce0a;
   color: #212630;
   border-radius: 20px;
   text-decoration: none;
@@ -378,7 +378,7 @@ h2 {
 }
 
 .stat-card i {
-  color: #88c0d0;
+  color: #00ce0a;
   margin-right: 10px;
 }
 
@@ -386,7 +386,7 @@ h2 {
 .github-commits h3 {
   font-size: 1.75rem;
   font-weight: 600;
-  color: #88c0d0;
+  color: #00ce0a;
   margin: 50px 0 30px;
   text-align: center;
 }
@@ -415,7 +415,7 @@ h2 {
 .repo-card h4 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #88c0d0;
+  color: #00ce0a;
   margin-bottom: 12px;
 }
 
@@ -435,7 +435,7 @@ h2 {
 }
 
 .repo-stats i {
-  color: #88c0d0;
+  color: #00ce0a;
   margin-right: 5px;
 }
 
@@ -453,7 +453,7 @@ h2 {
   left: 50%;
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, #88c0d0, #2a303c);
+  background: linear-gradient(to bottom, #00ce0a, #2a303c);
   transform: translateX(-50%);
 }
 
@@ -499,7 +499,7 @@ h2 {
   top: 50%;
   width: 12px;
   height: 12px;
-  background: #88c0d0;
+  background: #00ce0a;
   border-radius: 50%;
   box-shadow: 0 0 12px rgba(136, 192, 208, 0.5);
   transform: translateY(-50%);
@@ -563,7 +563,7 @@ h2 {
 
 .social-links a:hover {
   transform: scale(1.15);
-  color: #88c0d0;
+  color: #00ce0a;
 }
 
 /* Responsive Design */
